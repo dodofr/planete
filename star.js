@@ -1,17 +1,11 @@
-// fetch ("https://tenor.googleapis.com/v2/search?key=AIzaSyAVpVVTmWXqZnBvf1vFJbxh2Wi3Q4SLThg&q=loosers&random=true&limit=50") /// API
-//     .then(reponse => reponse.json())                              // double then que j'ai pas bien saissi 
-//     .then((picture) =>{
-//       for (let i = 0; i < 50; i++) {                               // boucle pour push dans un tableau et cree le random plus bas
-//         imgtabL.push(picture.results[i].media_formats.gif.url)     // recuperer le gif en url 
-//       console.log(picture.results[i].media_formats.gif.url)
-//       }
-     
-//        })
+
 let grid = document.querySelector(".grid")
 let button = document.querySelector("#btn")
 let nom = []
 // let descriptif = [] /// a du servir mais je n'en ai pas souvenir
 let climat = []
+let diametre = []
+let terrain = []
 let pop =[]
 let grav = []
 let img =["image/tatouine.jpg","image/alderan.jpg","image/iavin4.jpg","image/hoth.jpg","image/dagobah.jpg","image/bespin.jpg","image/endor.jpg",
@@ -27,6 +21,8 @@ fetch ("https://swapi.dev/api/planets/") /// API
             climat.push(picture.results[i].climate)
             pop.push(picture.results[i].population)
             grav.push(picture.results[i].gravity)
+            diametre.push(picture.results[i].diameter)
+            terrain.push(picture.results[i].terrain)
             
             let div = document.createElement("div")
             let nomImprime = document.createElement("h2")
@@ -34,12 +30,18 @@ fetch ("https://swapi.dev/api/planets/") /// API
             let climate = document.createElement("p")
             let population = document.createElement("p")
             let gravity = document.createElement("p")
+            let diameter = document.createElement("p")
+            let terrai = document.createElement("p")
+
 
             nomImprime.innerHTML = nom[i]
             image.src = img[i]
             climate.innerHTML ="Climate : " + climat[i]
             population.innerHTML ="Population : " + pop[i] + " habitants"
             gravity.innerHTML ="Gravity : " + grav[i]
+            diameter.innerHTML ="diamètre : " + diametre[i] + " kms"
+            terrai.innerHTML ="surface : " + terrain[i]  
+
 
            
             div.appendChild(nomImprime)
@@ -47,6 +49,8 @@ fetch ("https://swapi.dev/api/planets/") /// API
             div.appendChild(climate)
             div.appendChild(population)
             div.appendChild(gravity)
+            div.appendChild(diameter)
+            div.appendChild(terrai)
 
             grid.appendChild(div)  
             console.log(picture)
@@ -62,6 +66,8 @@ fetch ("https://swapi.dev/api/planets/") /// API
             // let descriptif = []
             let climat = []
             let pop =[]
+            let diametre = []
+            let terrain = []
             let grav = []
             let imga =["image/geneosi.jpg","image/utapau.jpg","image/mustafar.jpg","image/kashiii.jpg","image/polis.jpg","image/magneto.jpg",
             "image/felucia.jpg","image/catonemo.jpg","image/saleucami.jpg","image/stewjon.jpg"]
@@ -72,6 +78,8 @@ fetch ("https://swapi.dev/api/planets/") /// API
                 climat.push(pagedeux.results[i].climate)
                 pop.push(pagedeux.results[i].population)
                 grav.push(pagedeux.results[i].gravity)
+                diametre.push(pagedeux.results[i].diameter)
+                terrain.push(pagedeux.results[i].terrain)
                 
                 let div = document.createElement("div")
                 let nomImprime = document.createElement("h2")
@@ -79,12 +87,16 @@ fetch ("https://swapi.dev/api/planets/") /// API
                 let climate = document.createElement("p")
                 let population = document.createElement("p")
                 let gravity = document.createElement("p")
+                let diameter = document.createElement("p")
+                let terrai = document.createElement("p")
     
                 nomImprime.innerHTML = nom[i]
                 image.src = imga[i]
                 climate.innerHTML ="Climate : " + climat[i]
                 population.innerHTML ="Population : " + pop[i] + " habitants"
                 gravity.innerHTML ="Gravity : " + grav[i]
+                diameter.innerHTML ="diamètre : " + diametre[i] + " kms"
+                terrai.innerHTML ="surface : " + terrain[i] 
     
                
                 div.appendChild(nomImprime)
@@ -92,6 +104,8 @@ fetch ("https://swapi.dev/api/planets/") /// API
                 div.appendChild(climate)
                 div.appendChild(population)
                 div.appendChild(gravity)
+                div.appendChild(diameter)
+                div.appendChild(terrai)
     
                 grid.appendChild(div)  
                 console.log(pagedeux)
