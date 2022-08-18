@@ -1,0 +1,37 @@
+body{
+    background-color: rgba(41, 4, 4, 0.438) ;
+}
+
+
+h1 {
+    color : rgb(118, 17, 17);
+    text-align: center;
+    margin: 2em auto 4em;
+}
+h2{
+    color: #B22222
+}
+.grid {
+    display: grid;
+    grid-template-columns: 20em 20em 20em 20em;
+    justify-content: space-around;
+    gap: 4em;
+    
+}
+.grid div{
+    display: grid;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 10px 10px 10px black;
+}
+button{
+    display: flex;
+    justify-content: center;
+    margin: 50px auto;
+    width: 100px;
+    background-color: brown;
+    color: blue;
+    font-size: 1em;
+    
+}
