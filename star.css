@@ -9,7 +9,9 @@ h1 {
     margin: 2em auto 4em;
 }
 h2{
-    color: #B22222
+    color: #B22222;
+    text-align: center;
+
 }
 .grid {
     display: grid;
@@ -33,5 +35,7 @@ button{
     background-color: brown;
     color: blue;
     font-size: 1em;
-    
+}
+img{
+    margin: auto
 }
